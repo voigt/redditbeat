@@ -1,0 +1,15 @@
+################### Redditbeat Configuration Example #########################
+
+############################# Redditbeat ######################################
+
+redditbeat:
+  # Defines how often an event is sent to the output
+  period: 60s
+
+  reddit:
+    # Defines the catched usernames (screennames)
+    username: "username"
+    password: "password"
+    useragent: "Redditbeat v0.1"
+    subs: ["kitten", "news"]
+    limit: 10

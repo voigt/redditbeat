@@ -1,0 +1,5 @@
+= Redditbeat Docs
+
+Welcome to the Redditbeat documentation.
+
+

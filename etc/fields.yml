@@ -1,0 +1,58 @@
+- key: redditbeat
+  title: redditbeat
+  description:
+  fields:
+    - name: counter
+      type: long
+      required: true
+      description: >
+        PLEASE UPDATE DOCUMENTATION
+
+      # new fields added redditbeat
+    - name: subName
+      type: text
+      submission:
+        - name: author
+          type: text
+        - name: banned_by
+          type: text
+        - name: clicked
+          type: boolean
+        - name: created_utc
+          type: text
+        - name: domain
+          type: text
+        - name: downs
+          type: integer
+        - name: id
+          type: text
+        - name: is_self
+          type: boolean
+        - name: name
+          type: text
+        - name: num_comments
+          type: integer
+        - name: over_18
+          type: boolean
+        - name: permalink
+          type: text
+        - name: saved
+          type: boolean
+        - name: score
+          type: integer
+        - name: selftext
+          type: text
+        - name: subreddit
+          type: text
+        - name: subreddit_id
+          type: text
+        - name: thumbnail
+          type: text
+        - name: title
+          type: text
+        - name: ups
+          type: integer
+        - name: url
+          type: text
+    - name: type
+      type: text
