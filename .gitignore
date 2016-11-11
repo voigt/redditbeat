@@ -1,0 +1,8 @@
+/.idea
+/build
+/vendor
+
+.DS_Store
+/redditbeat
+/redditbeat.test
+*.pyc
