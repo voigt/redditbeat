@@ -52,7 +52,7 @@ func (bt *Redditbeat) Run(b *beat.Beat) error {
 
 	bt.client = b.Publisher.Connect()
 	ticker := time.NewTicker(bt.config.Period)
-	counter := 1
+
 	for {
 		select {
 		case <-bt.done:
@@ -65,15 +65,6 @@ func (bt *Redditbeat) Run(b *beat.Beat) error {
 				}
 			}
 		}
-
-		// event := common.MapStr{
-		// 	"@timestamp": common.Time(time.Now()),
-		// 	"type":       b.Name,
-		// 	"counter":    counter,
-		// }
-		// bt.client.PublishEvent(event)
-		//logp.Info("Event sent")
-		counter++
 	}
 }
 
@@ -151,6 +142,8 @@ func (bt *Redditbeat) processSubs(name string, sync chan byte, err chan error) {
 	sync <- 1
 }
 
+// Fetches the X last submissions of a given Subreddit.
+// X is defined as "Limit" in beat.yml
 func (bt *Redditbeat) fetchSubmissions(name string) ([]*geddit.Submission, error) {
 
 	subOpts := geddit.ListingOptions{
