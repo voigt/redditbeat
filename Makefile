@@ -36,6 +36,12 @@ git-init:
 	git add .travis.yml
 	git commit -m "Add Travis CI"
 
+.PHONY: clear-cache
+clear-cache:
+	rm data/redditmap.json && touch data/redditmap.json
+
 # This is called by the beats packer before building starts
 .PHONY: before-build
 before-build:
+	mkdir -p data/
+	touch data/redditmap.json
