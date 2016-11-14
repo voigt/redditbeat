@@ -136,7 +136,8 @@ This will fetch and create all images required for the build process. The hole p
 
 * [x] index new Submissions of one or multiple given Subreddits
 * [x] add persistency, so already indexed submissions will not be indexed again
-* [] index new Submissions of one or multiple Users
+* [ ] add dockerfile
+* [ ] index new Submissions of one or multiple Users
 
 ---
 
