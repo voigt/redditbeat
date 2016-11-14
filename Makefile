@@ -40,8 +40,12 @@ git-init:
 clear-cache:
 	rm data/redditmap.json && touch data/redditmap.json
 
+.PHONEY: scaffold
+scaffold:
+	mkdir -p data/
+	touch data/redditmap.json
+	glide install
+
 # This is called by the beats packer before building starts
 .PHONY: before-build
 before-build:
-	mkdir -p data/
-	touch data/redditmap.json

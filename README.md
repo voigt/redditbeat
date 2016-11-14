@@ -1,33 +1,21 @@
 # Redditbeat
 
-Welcome to Redditbeat.
-
-Ensure that this folder is at the following location:
-`${GOPATH}/github.com/voigt`
+Redditbeat is an [Elastic Beat](https://github.com/elastic/beats) to index new Reddit Submissions of one or multiple Subreddits.
 
 ## Getting Started with Redditbeat
 
 ### Requirements
 
-* [Golang](https://golang.org/dl/) 1.7
-* [Beats](https://github.com/elastic/beats) ^5.0.0
+Ensure that this folder is at the following location: `${GOPATH}/github.com/voigt`
 
-```
-$ cd $GOPATH/src/github.com/
-$ git clone https://github.com/elastic/beats.git
-$ cd $GOPATH/src/github.com/elastic/beats
-$ git checkout v5.0.0
-```
+* [Golang](https://golang.org/dl/) 1.7
 
 ### Init Project
 To get running with Redditbeat and also install the
 dependencies, run the following command:
 
 ```
-git clone https://github.com/voigt/redditbeat.git
-go get
-make setup
-make before-build
+make scaffold
 ```
 
 ### Build
@@ -52,6 +40,23 @@ To run Redditbeat with debugging output enabled, run:
 
 ```
 make clear-cache
+```
+
+### Configuration
+
+You'll want to configure which Subreddits to index. You will do this in `redditbeat.yml`.
+
+```
+redditbeat:
+  # Defines how often an event is sent to the output
+  period: 60s                       # how often to check for new Submissions
+
+  reddit:
+    username: "username"
+    password: "password"
+    useragent: "Redditbeat v0.1"
+    subs: ["kitten", "news"]        # a list of Subreddits to index
+    limit: 10                       # curret limit is 100
 ```
 
 
@@ -123,6 +128,14 @@ make package
 ```
 
 This will fetch and create all images required for the build process. The hole process to finish can take several minutes.
+
+---
+
+# Todo
+
+* [x] index new Submissions of one or multiple given Subreddits
+* [x] add persistency, so already indexed submissions will not be indexed again
+* [] index new Submissions of one or multiple Users
 
 ---
 

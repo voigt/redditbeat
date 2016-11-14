@@ -7,7 +7,6 @@ redditbeat:
   period: 60s
 
   reddit:
-    # Defines the catched usernames (screennames)
     username: "username"
     password: "password"
     useragent: "Redditbeat v0.1"

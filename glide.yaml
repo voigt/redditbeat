@@ -1,0 +1,7 @@
+package: .
+import:
+- package: github.com/elastic/beats
+  version: ^5.0.0
+- package: github.com/jzelinskie/geddit
+  version: 4c36fbd6d900519bb9633b55d1a4e0b9c74cb16c
+- package: github.com/dustin/gojson
