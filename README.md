@@ -9,6 +9,7 @@ Redditbeat is an [Elastic Beat](https://github.com/elastic/beats) to index new R
 Ensure that this folder is at the following location: `${GOPATH}/github.com/voigt`
 
 * [Golang](https://golang.org/dl/) 1.7
+* [Glide](https://github.com/Masterminds/glide) (it's used during `make scaffold`)
 
 ### Init Project
 To get running with Redditbeat and also install the
