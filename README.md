@@ -124,12 +124,15 @@ make package
 
 This will fetch and create all images required for the build process. The hole process to finish can take several minutes.
 
+---
 
-## Known issues
+# Known issues
 
-*Redditbeat misses new Submissions*  
-Redditbeat is making use of geddit. Unfortunately geddit saves the timestamp of a submission in `float32`, which means during conversion to string we lose up to 99 secs. Ultimately this leads to the fact, that Redditbeat does not recognise new Submissions of which created date is closer than 99 secs. geddit is [already informed](https://github.com/jzelinskie/geddit/issues/25).  
+* **Redditbeat misses some new Submissions**  
+Redditbeat is making use of [geddit](https://github.com/jzelinskie/geddit). Unfortunately geddit saves the timestamp of a submission in `float32`, which means we lose up to 99 seconds of the timestamp. Ultimately this leads to the fact, that Redditbeat does not recognise new Submissions of which created date is closer than 99 secs. geddit is [already informed](https://github.com/jzelinskie/geddit/issues/25).  
+
+---
 
 # Thanks to
 
-* [@buehler](https://github.com/buehler), I used your [twitterbeat](https://github.com/buehler/twitterbeat) as a pattern. I copied the persistency approach.
+* [@buehler](https://github.com/buehler), I used his [twitterbeat](https://github.com/buehler/twitterbeat) as a pattern. I copied the persistency approach.
