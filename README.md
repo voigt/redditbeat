@@ -11,6 +11,13 @@ Ensure that this folder is at the following location: `${GOPATH}/github.com/voig
 * [Golang](https://golang.org/dl/) 1.7
 * [Glide](https://github.com/Masterminds/glide) (it's used during `make scaffold`)
 
+### Clone Project
+
+```
+git clone https://github.com/voigt/redditbeat.git $GOPATH/src/github.com/voigt/redditbeat
+cd $GOPATH/src/github.com/voigt/redditbeat
+```
+
 ### Init Project
 To get running with Redditbeat and also install the
 dependencies, run the following command:
