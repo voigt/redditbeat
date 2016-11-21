@@ -5,6 +5,9 @@ TEST_ENVIRONMENT=false
 ES_BEATS?=./vendor/github.com/elastic/beats
 GOPACKAGES=$(shell glide novendor)
 PREFIX?=.
+BRANCH = "master"
+VERSION = $(shell cat ./VERSION)
+
 
 # Path to the libbeat Makefile
 -include $(ES_BEATS)/libbeat/scripts/Makefile
@@ -49,3 +52,9 @@ scaffold:
 # This is called by the beats packer before building starts
 .PHONY: before-build
 before-build:
+
+push-tag:
+	git checkout ${BRANCH}
+	git pull origin ${BRANCH}
+	git tag ${VERSION}
+	git push origin ${BRANCH} --tags
